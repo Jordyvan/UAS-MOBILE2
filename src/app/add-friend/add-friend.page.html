@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button [routerLink]="'/tabs'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Friend</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngIf="Dummy.length == 0">
+      <ion-item lines="none" style="text-align: center;">
+         <ion-label>You already added All friends</ion-label>
+      </ion-item>
+    </div>
+    <div *ngIf="Dummy.length != 0">
+      <ion-item *ngFor="let dummy of Dummy" >
+        <ion-avatar slot="start">
+          <img *ngIf="!dummy.profileImage" src="../../assets/img/dum.png" alt="">
+          <img *ngIf="dummy.profileImage" [src]= dummy.profileImage>
+        </ion-avatar>
+        <ion-label (click)="add(dummy.key)">
+          <h2>{{dummy.nama}}</h2>
+        </ion-label>
+      </ion-item>
+    </div>
+
+  </ion-list>
+</ion-content>

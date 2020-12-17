@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    <ion-avatar>
+      <img *ngIf="currUser.profileImage == null" src="../../../assets/img/dum.png">
+      <img *ngIf="currUser.profileImage != null" [src]="currUser.profileImage" />
+    </ion-avatar>
+
+    <div class="profile">
+      <ion-item lines="undefined">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-label>
+          <h3>Nama</h3>
+          <h2>{{currUser.nama}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="mail"></ion-icon>
+        <ion-label>
+          <h3>Email</h3>
+          <h2>{{currUser.email}}</h2>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <div class="btn-section">
+      <ion-grid>
+        <ion-row>
+          <ion-button [routerLink]="['/edit-profile']"  shape="round">
+            <ion-icon class="icon-btn" slot="start" name="pencil"></ion-icon>
+            <ion-label class="label-btn">Edit Profile</ion-label>
+          </ion-button>
+        </ion-row>
+        <ion-row>
+          <ion-button (click)="logout()" shape="round">
+            <ion-icon class="icon-btn" slot="start" name="log-out"></ion-icon>
+            <ion-label class="label-btn">Logout</ion-label>
+          </ion-button>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div style="margin-left:1.5rem; margin-right:1rem;">
+      <p>
+        Kesan pesan modul mudah dan ilmunya sangat banyak yang saya dapatkan dari kelas ini.
+      </p>
+    </div>
+    <div>
+      <h2 class="feedSection">MY Feeds</h2>
+      <ion-list class="feedlist">
+        <div *ngFor="let dummy of Dummy">
+          <ion-list>
+            <ion-item>
+              <p (click)="test(dummy.id)" style="overflow: visible;">{{currUser.nama}} checked-in at {{dummy.nama}} at {{dummy.date}}</p>
+            </ion-item>
+          </ion-list>
+
+        </div>
+      </ion-list>
+    </div>
+  </ion-content>
+

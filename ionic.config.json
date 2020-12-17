@@ -1,0 +1,8 @@
+{
+  "name": "UAS-LAB",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

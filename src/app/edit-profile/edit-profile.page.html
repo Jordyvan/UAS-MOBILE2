@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-avatar class="test" >
+      <!-- <img src="../../assets/img/sun.png"> -->
+      <img [src]="imageUrl"/>
+      <div >
+        <span class="edit"><ion-icon name="camera" (click)="presentPopover($event)"></ion-icon></span>
+      </div>
+    </ion-avatar>
+  </div>
+  <div class="profile">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <ion-item lines="undefined">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-label position="floating">
+          <h3>Nama</h3>
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.nama" ngModel name="nama"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="mail"></ion-icon>
+        <ion-label position="floating">
+          <h3>Email</h3>
+        </ion-label>
+        <ion-input type="email" disabled value="{{user.email}}"></ion-input>
+      </ion-item>
+      <div class="btn-section">
+        <ion-grid>
+          <ion-row>
+            <ion-button type="submit" shape="round" >
+              <ion-icon class="icon-btn" slot="start" name="save"></ion-icon>
+              <ion-label class="label-btn">Simpan</ion-label>
+            </ion-button>
+          </ion-row>
+          <ion-row>
+            <ion-button (click)="presentAlert()"  shape="round">
+              <ion-icon class="icon-btn" slot="start" name="close"></ion-icon>
+              <ion-label class="label-btn">Batal</ion-label>
+            </ion-button>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </form>
+  </div>
+
+</ion-content>

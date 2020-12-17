@@ -1,0 +1,54 @@
+ion-avatar{
+  margin: 1rem auto;
+  width: 10rem;
+  height: 10rem;
+  // background-color: white;
+  padding: 1rem;
+}
+ion-icon{
+  color: #428cff;
+}
+
+ion-img{
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+}
+
+.profile{
+  margin: 1rem 5rem 1rem 5rem;
+}
+
+.icon-btn{
+  color:white;
+}
+
+.label-btn{
+  font-weight: 550;
+}
+
+.title{
+  text-align: center;
+}
+.subtitle{
+  text-align: center;
+  margin: auto;
+}
+.btn-section ion-grid ion-row ion-button{
+  margin: 0.25rem auto 1rem;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .profile{
+    margin: 1rem 1rem 1rem 1rem;
+  }
+}
+.feedSection{
+  margin-left: 1rem;
+  font-weight: 550;
+  font-size: 1.5rem;
+}
+.feedlist{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

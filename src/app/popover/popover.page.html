@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-list lines="none">
+    <ion-item (click)="getPicture('camera')" button>
+      <ion-label>Camera</ion-label>
+    </ion-item>
+    <ion-item (click)="getPicture('gallery')" button>
+      <ion-label>Select Photo</ion-label>
+    </ion-item>
+  </ion-list>
+  <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/>
+</ion-content>
