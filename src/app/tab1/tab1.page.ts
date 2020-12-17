@@ -45,6 +45,7 @@ export class Tab1Page {
       self.tempUser = data1;
       this.userService.getAllFriend().subscribe(data => {
         self.Dummy = self.tempUser;
+        self.tempFriendList = [];
         data.payload.child(this.currUserId).forEach(function (childSnapshot) {
           for (let i = 0; i < self.Dummy.length; i++)
           {
